@@ -21,11 +21,10 @@ git clone git@github.com:Weslley95/lumen-api-rest-series.git
 
 <pre>
 1. Use php version in 7.3
-2. composer install
 3. composer update
 
 4. up serve
-    php -S localhost:8000 -t public
+php -S localhost:8000 -t public
 </pre>
 
 
