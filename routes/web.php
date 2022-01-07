@@ -40,3 +40,5 @@ $router->group(['prefix' => '/api', 'middleware' => 'auth'], function() use($rou
         $router->delete('{id}', 'EpisodesController@destroy');
     });
 });
+
+$router->post('/api/login', 'TokenController@generateToken');
