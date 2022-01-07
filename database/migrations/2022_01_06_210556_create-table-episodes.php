@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTableEpisodios extends Migration
+class CreateTableEpisodes extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class CreateTableEpisodios extends Migration
      */
     public function up()
     {
-        Schema::create('episodios', function (Blueprint $table) {
-            $table->id();
+        Schema::create('episodes', function (Blueprint $table) {
+            $table->tinyIncrements('id');
             $table->integer('season');
             $table->integer('number');
             $table->boolean('view')->default('false');
@@ -30,6 +30,6 @@ class CreateTableEpisodios extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('episodios');
+        Schema::dropIfExists('episodes');
     }
 }

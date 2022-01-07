@@ -9,9 +9,9 @@ class Serie extends Model
     public $timestamps = false;
     protected $fillable = ['name'];
 
-    public function season() {
+    public function episodes() {
 
         // Serie possui muitos episodios
-        return $this->hasMany(Season::class);
+        return $this->hasMany(Episode::class);
     }
 }

@@ -17,11 +17,24 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-// Routes API
+// Routes api/..
 $router->group(['prefix' => '/api'], function() use($router) {
-    $router->post('series', 'SeriesController@store');
-    $router->get('series', 'SeriesController@index');
-    $router->get('series/{id}', 'SeriesController@show');
-    $router->put('series/{id}', 'SeriesController@update');
-    $router->delete('series/{id}', 'SeriesController@destroy');
+
+    // Routes for series/..
+    $router->group(['prefix' => '/series'], function() use($router){
+        $router->post('', 'SeriesController@store');
+        $router->get('', 'SeriesController@index');
+        $router->get('{id}', 'SeriesController@show');
+        $router->put('{id}', 'SeriesController@update');
+        $router->delete('{id}', 'SeriesController@destroy');
+    });
+
+    // Routes for season/..
+    $router->group(['prefix' => '/episodes'], function() use($router) {
+        $router->post('', 'EpisodesController@store');
+        $router->get('', 'EpisodesController@index');
+        $router->get('{id}', 'EpisodesController@show');
+        $router->put('{id}', 'EpisodesController@update');
+        $router->delete('{id}', 'EpisodesController@destroy');
+    });
 });
