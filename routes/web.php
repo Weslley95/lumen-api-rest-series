@@ -18,7 +18,7 @@ $router->get('/', function () use ($router) {
 });
 
 // Routes api/..
-$router->group(['prefix' => '/api', 'middleware' => 'auth'], function() use($router) {
+$router->group(['prefix' => '/api', 'middleware' => 'authenticator'], function() use($router) {
 
     // Routes for series/..
     $router->group(['prefix' => '/series'], function() use($router){
@@ -41,4 +41,5 @@ $router->group(['prefix' => '/api', 'middleware' => 'auth'], function() use($rou
     });
 });
 
+// Route for test
 $router->post('/api/login', 'TokenController@generateToken');
