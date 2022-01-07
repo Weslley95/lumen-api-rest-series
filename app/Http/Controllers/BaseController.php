@@ -14,9 +14,10 @@ abstract class BaseController
      *
      * @return mixed
      */
-    public function index() {
+    public function index(Request $request) {
 
-        return $this->class::all();
+        // Get result from page for created pagination
+        return $this->class::paginate($request->per_page);
     }
 
     /**

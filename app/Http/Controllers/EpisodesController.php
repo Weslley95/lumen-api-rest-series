@@ -12,4 +12,17 @@ class EpisodesController extends BaseController
     public function __construct() {
         $this->class = Episode::class;
     }
+
+    /**
+     * Get of episodes
+     *
+     * @param int $serieId
+     * @return $episodes
+     */
+    public function getOfSerie(int $serieId) {
+
+        $episodes = Episode::query()->where('serie_id', $serieId)->paginate();
+
+        return $episodes;
+    }
 }
