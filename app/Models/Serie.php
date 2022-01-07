@@ -27,7 +27,7 @@ class Serie extends Model
      * @param $links
      * @return array link episode
      */
-    public function getLinksAttribute($links): array {
+    public function getLinksAttribute(): array {
 
         // HATEOAS
         return [

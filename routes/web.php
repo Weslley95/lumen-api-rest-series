@@ -18,7 +18,7 @@ $router->get('/', function () use ($router) {
 });
 
 // Routes api/..
-$router->group(['prefix' => '/api'], function() use($router) {
+$router->group(['prefix' => '/api', 'middleware' => 'auth'], function() use($router) {
 
     // Routes for series/..
     $router->group(['prefix' => '/series'], function() use($router){
